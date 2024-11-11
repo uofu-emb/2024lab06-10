@@ -4,6 +4,9 @@
 #include <unity.h>
 #include "unity_config.h"
 
+//Semaphore handles
+#define 
+
 void setUp(void) {}
 
 void tearDown(void) {}
@@ -21,6 +24,10 @@ void test_multiplication(void)
     int z = x / y;
     TEST_ASSERT_TRUE_MESSAGE(z == 5, "Multiplication of two integers returned incorrect value.");
 }
+
+//Set up each of the semaphora
+
+
 
 int main (void)
 {
