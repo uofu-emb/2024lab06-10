@@ -1,8 +1,44 @@
-Testing
-build
-log
+# Ignore build directories
+build/
+**/build/
 
-*.log.*
-*-asciinema
-*.pid
-*-profile
+# Ignore VSCode settings and workspace files
+.vscode/
+*.code-workspace
+
+# Ignore CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Ignore Pico SDK submodules (if cloned as a submodule)
+pico-sdk/
+
+# Ignore FreeRTOS submodules (if cloned as a submodule)
+lib/freertos/
+
+# Ignore Unity testing framework (if cloned as a submodule)
+lib/unity/
+
+# Ignore object files, executables, and libraries
+*.o
+*.obj
+*.elf
+*.bin
+*.hex
+*.map
+*.a
+
+# Ignore log or debug files
+*.log
+
+# Ignore temporary files from editors or operating systems
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# Ignore Python virtual environments (if used for scripting)
+venv/
+__pycache__/
