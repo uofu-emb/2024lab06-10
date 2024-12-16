@@ -14,7 +14,7 @@ if(PICO_CYW43_SUPPORTED)
         pico_cyw43_arch_none
     )
 endif()
-
+#
 # Modify the below lines to enable/disable output over UART/USB.
 # These are mutually exclusive, only set one.
 pico_enable_stdio_uart(mytest 0)
