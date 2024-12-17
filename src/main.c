@@ -13,7 +13,7 @@
 #include "pico/stdlib.h"
 #include "pico/multicore.h"
 #include "pico/cyw43_arch.h"
-
+//
 int count = 0;
 bool on = false;
 //Blink Task was left in for debugging not necesary for running program
@@ -21,6 +21,7 @@ bool on = false;
 #define BLINK_TASK_PRIORITY     ( tskIDLE_PRIORITY + 2UL )
 //#define MAIN_TASK_STACK_SIZE configMINIMAL_STACK_SIZE
 #define BLINK_TASK_STACK_SIZE configMINIMAL_STACK_SIZE
+
 
 
 // Task Handles
