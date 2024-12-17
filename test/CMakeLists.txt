@@ -1,15 +1,22 @@
 # Test binary
 add_executable(mytest
-    test.c
-    unity_config.c
-    ../test/helper.c   # Include the helper implementation
+    mytest.c            # Add the main test file
+    unity_config.c      # Include UNITY configuration
+    ../test/helper.c    # Include the helper implementation
 )
 
+# Include directories
+target_include_directories(mytest PRIVATE
+    ../test             # Include path for helper.h and other headers
+    ${UNITY_PATH}       # Ensure UNITY headers are included
+)
+
+# Link required libraries
 target_link_libraries(mytest PRIVATE
-  pico_stdlib
-  pico_async_context_freertos
-  FreeRTOS-Kernel-Heap4
-  unity
+    pico_stdlib         # Standard library for Pico
+    pico_async_context_freertos
+    FreeRTOS-Kernel-Heap4
+    unity               # Link UNITY library for testing
 )
 
 # The CYW43 is the Wifi/Bluetooth module. If the board is set to pico_w, this
