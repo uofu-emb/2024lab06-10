@@ -66,6 +66,27 @@ Induce priority inversion.
 
 You may find it useful to create a helper function to setup and teardown the threads.
 
+### Expected behavor
+# Initialization of key tasks
+Task Priorities
+
+    Emperor: Priority 3
+    King: Priority 2
+    BlinkTask and Baron: Priority 1
+
+# Main.c code
+
+
+Expected Behavior
+
+BlinkTask runs continuously, toggling the LED state. This is to make sure we are flashing to the system.
+Baron acquires the semaphore and holds it for 4 seconds.
+King starts after a delay, attempts to acquire the semaphore, and blocks.
+Emperor periodically prints supervisory messages.
+The logs demonstrate priority inversion as King (higher priority) is forced to wait for Baron.
+
+
+
 ### Activity 1
 Repeat the previous experiment, but this time create the semaphore with xSemaphoreCreateMutex
 

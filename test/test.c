@@ -7,7 +7,7 @@
 void setUp(void) {}
 
 void tearDown(void) {}
-//
+
 void test_variable_assignment()
 {
     int x = 1;

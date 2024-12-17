@@ -1,4 +1,9 @@
-add_executable(mytest test.c unity_config.c)
+# Test binary
+add_executable(mytest
+    test.c
+    unity_config.c
+    ../test/helper.c   # Include the helper implementation
+)
 
 target_link_libraries(mytest PRIVATE
   pico_stdlib
@@ -42,4 +47,5 @@ add_test(NAME simulate_mytest COMMAND
     -e "$ELF=@$<TARGET_FILE:mytest>; $WORKING=@${CMAKE_SOURCE_DIR}; include @${CMAKE_SOURCE_DIR}/test/simulate.resc; start"
     )
 
+# Flash target for test
 add_custom_target(flash_test picotool load -f $<TARGET_FILE:mytest> DEPENDS mytest)
