@@ -23,7 +23,6 @@ bool on = false;
 #define BLINK_TASK_STACK_SIZE configMINIMAL_STACK_SIZE
 
 
-
 // Task Handles
 TaskHandle_t emperorHandle = NULL;
 TaskHandle_t kingHandle = NULL;
